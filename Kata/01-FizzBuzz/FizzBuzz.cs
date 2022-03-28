@@ -4,6 +4,6 @@ public class FizzBuzz
 {
     public string GetFizzBuzz(int number)
     {
-        return "1";
+        return number.ToString();
     }
 }

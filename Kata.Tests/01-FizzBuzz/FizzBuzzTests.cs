@@ -18,7 +18,7 @@ public class FizzBuzzTests
     [Theory]
     [InlineData(3)]
     [InlineData(6)]
-    public void ShouldGetFizzCorrect(int number)
+    public void ShouldGetOnlyFizzCorrect(int number)
     {
         // Arrange
         var sut = new FizzBuzz();
@@ -31,7 +31,7 @@ public class FizzBuzzTests
     [Theory]
     [InlineData(5)]
     [InlineData(10)]
-    public void ShouldGetBuzzCorrect(int number)
+    public void ShouldGetOnlyBuzzCorrect(int number)
     {
         // Arrange
         var sut = new FizzBuzz();
@@ -39,6 +39,17 @@ public class FizzBuzzTests
         var actual = sut.GetFizzBuzz(number);
         // Assert
         actual.Should().Be("Buzz");
+    }
+
+    [Fact]
+    public void ShouldGetFizzBuzzCorrect()
+    {
+        // Arrange
+        var sut = new FizzBuzz();
+        // Act
+        var actual = sut.GetFizzBuzz(15);
+        // Assert
+        actual.Should().Be("FizzBuzz");
     }
 }
 

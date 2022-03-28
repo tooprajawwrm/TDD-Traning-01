@@ -56,11 +56,15 @@ public class FizzBuzzTests
         actual.Should().Be("FizzBuzz");
     }
 
-    [Fact]
-    public void ShouldThrowExceptionWhenArgumentOutOfRange()
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-10)]
+    [InlineData(120)]
+    [InlineData(1000)]
+    public void ShouldThrowExceptionWhenArgumentOutOfRange(int number)
     {
         var sut = new FizzBuzz();
-        Action act = () => sut.GetFizzBuzz(0);
+        Action act = () => sut.GetFizzBuzz(number);
         act.Should().Throw<ArgumentOutOfRangeException>("number");
     }
 }

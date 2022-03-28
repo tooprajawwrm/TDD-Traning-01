@@ -1,9 +1,15 @@
+using System;
+
 namespace Kata.FizzBuzz;
 
 public class FizzBuzz
 {
     public string GetFizzBuzz(int number)
     {
+        if (number == 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(number));
+        }
         if (number % 3 == 0 && number % 5 == 0)
         {
             return "FizzBuzz";

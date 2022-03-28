@@ -6,7 +6,7 @@ public class FizzBuzz
 {
     public string GetFizzBuzz(int number)
     {
-        if (number == 0)
+        if (number < 1 || number > 100)
         {
             throw new ArgumentOutOfRangeException(nameof(number));
         }

@@ -15,13 +15,15 @@ public class FizzBuzzTests
         actual.Should().Be(result);
     }
 
-    [Fact]
-    public void ShouldGetFizzCorrect()
+    [Theory]
+    [InlineData(3)]
+    [InlineData(6)]
+    public void ShouldGetFizzCorrect(int number)
     {
         // Arrange
         var sut = new FizzBuzz();
         // Act
-        var actual = sut.GetFizzBuzz(3);
+        var actual = sut.GetFizzBuzz(number);
         // Assert
         actual.Should().Be("Fizz");
     }

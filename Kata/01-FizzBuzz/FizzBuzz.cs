@@ -4,7 +4,7 @@ public class FizzBuzz
 {
     public string GetFizzBuzz(int number)
     {
-        if(number == 5)
+        if (number == 5)
         {
             return "Buzz";
         }

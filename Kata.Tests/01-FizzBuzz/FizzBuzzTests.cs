@@ -14,5 +14,16 @@ public class FizzBuzzTests
         // Assert
         actual.Should().Be(result);
     }
+
+    [Fact]
+    public void ShouldGetFizzCorrect()
+    {
+        // Arrange
+        var sut = new FizzBuzz();
+        // Act
+        var actual = sut.GetFizzBuzz(3);
+        // Assert
+        actual.Should().Be("Fizz");
+    }
 }
 

@@ -15,6 +15,12 @@ public class FizzBuzzTests
         var actual = sut.GetFizzBuzz(number);
         // Assert
         actual.Should().Be(result);
+
+        var actual2 = sut.IsFizz(number);
+        actual2.Should().Be(false);
+
+        var actual3 = sut.IsBuzz(number);
+        actual3.Should().Be(false);
     }
 
     [Theory]
@@ -28,6 +34,9 @@ public class FizzBuzzTests
         var actual = sut.GetFizzBuzz(number);
         // Assert
         actual.Should().Be("Fizz");
+
+        var actual2 = sut.IsFizz(number);
+        actual2.Should().Be(true);
     }
 
     [Theory]
@@ -41,6 +50,9 @@ public class FizzBuzzTests
         var actual = sut.GetFizzBuzz(number);
         // Assert
         actual.Should().Be("Buzz");
+
+        var actual2 = sut.IsBuzz(number);
+        actual2.Should().Be(true);
     }
 
     [Theory]
@@ -54,6 +66,9 @@ public class FizzBuzzTests
         var actual = sut.GetFizzBuzz(number);
         // Assert
         actual.Should().Be("FizzBuzz");
+
+        var actual2 = sut.IsFizzBuzz(number);
+        actual2.Should().Be(true);
     }
 
     [Theory]
@@ -64,7 +79,8 @@ public class FizzBuzzTests
     public void ShouldThrowExceptionWhenArgumentOutOfRange(int number)
     {
         var sut = new FizzBuzz();
-        Action act = () => sut.GetFizzBuzz(number);
+        //Action act = () => sut.GetFizzBuzz(number);
+        Action act = () => sut.ValidateNumberInRange(number);
         act.Should().Throw<ArgumentOutOfRangeException>("number");
     }
 

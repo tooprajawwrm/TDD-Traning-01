@@ -7,7 +7,7 @@ public class FizzBuzz
     public string GetFizzBuzz(int number)
     {
         ValidateNumberInRange(number);
-        if (IsBuzz(number) && IsFizz(number))
+        if (IsFizzBuzz(number))
         {
             return "FizzBuzz";
         }
@@ -22,7 +22,7 @@ public class FizzBuzz
         return number.ToString();
     }
 
-    private void ValidateNumberInRange(int number)
+    public void ValidateNumberInRange(int number)
     {
         if (number < 1 || number > 100)
         {
@@ -30,12 +30,17 @@ public class FizzBuzz
         }
     }
 
-    private bool IsFizz(int number)
+    public bool IsFizzBuzz(int number)
+    {
+        return IsBuzz(number) && IsFizz(number);
+    }
+
+    public bool IsFizz(int number)
     {
         return number % 3 == 0;
     }
 
-    private bool IsBuzz(int number)
+    public bool IsBuzz(int number)
     {
         return number % 5 == 0;
     }
